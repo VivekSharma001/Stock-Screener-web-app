@@ -1,0 +1,69 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <h1 class="nav-heading">vStockR</h1>
+        <form class="mainSelect">
+            <select name="pattern">
+                <option value="">-- Select a Pattern --</option>
+                {% for key in candlestick_patterns %}
+                    <option value="{{ key }}" {% if pattern == key %}selected="selected"{% endif %}>{{ candlestick_patterns[key] }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Scan" class="scan-button" />
+        </form>
+
+    </div>
+    <div class="display-section">
+        <div class="header">
+            <div class="header-img-div">
+                <img src="{{ url_for('static', filename='header-background-img.png') }}" class="header-img">
+            </div>
+            <div class="header-content-div">
+                <h1 style="font-size: 55px;" class="header-content">Overview</h1>
+                <p class="header-content" style="font-size: 15px;">
+                    The technical screener tool by vStockR scans the entire stock market to look for stocks that display your selected pattern in the most recent candle. It can be used 
+                    to shortlist your trading stocks for the day. Along with the pattern signal, the tool also gives more information such as the current short term trend and RSI values to better understand the stocks nature. Please note that this is not investment advice, but simply a screener that helps a user scan through the entire market in a short period of time. 
+                </p>
+                <h2 class="header-content" style="font-size: 30px;">How to use?</h2>
+                <p class="header-content" style="font-size: 15px;">
+                    Select your pattern of choice from the select bar on top and press the scan button. Watch as the tool quickly scans through the market and displays the stocks that have shown the pattern.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+    <table>
+        <tr>
+            <th style="color: white;" class="table-heading">Symbol</th>
+            <th style="color: white;" class="table-heading">Company</th>
+            <th style="color: white;" class="table-heading">Signal</th>
+        </tr>
+        {% for stock in stocks %}
+            {% if stocks[stock][pattern] %}
+            <tr>
+                <td class="stock-name">
+                    {{ stock }}
+                </td>
+                <td>
+                    <div class="stock-name">
+                       {{ stocks[stock]['company'] }} 
+                    </div>
+                    <img src="{{ url_for('static', filename=stock ~ '.NS_candlestick_chart.png') }}" class="backgrounf-img-header" />
+                </td>
+                <td style="border: 1px solid white;">
+                    <div class="{{ stocks[stock][pattern] }}">
+                        {{ stocks[stock][pattern]}} Pattern.
+                    </div>
+                    <div class="{{ stocks[stock]['trend'] }}">
+                        {{ stocks[stock]["trend"]}}
+                    </div>
+                </td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+</body>
+</html>

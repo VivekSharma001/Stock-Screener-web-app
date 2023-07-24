@@ -1,0 +1,182 @@
+html{
+       padding: 0px;
+}
+body { 
+       font-family: arial; 
+       margin: 0px; 
+       background-color: black;
+}
+        
+td { 
+       padding: 5px; 
+       text-align: center;
+
+}
+
+.stock-name{
+       color: white;
+       font-family: monospace;
+       font-size: 20px;
+}
+
+.table-heading{
+       font-size: 30px;
+       font-family: monospace;
+       text-align: center;
+}
+
+table, th, tr, td{
+  border: 1px solid white;
+}
+
+.bullish { 
+       background: green; 
+       color: white; 
+       padding: 10px;
+       font-size: 20px;
+       margin: 5px;
+       height: 30px;
+       border-radius: 10px;
+}
+.bearish { 
+       background: red;
+       color: white; 
+       padding: 10px;
+       font-size: 20px;
+       margin: 5px;
+       height: 30px;
+       border-radius: 10px;
+}
+
+.Up-Trend { 
+       background: green; 
+       color: white; 
+       padding: 10px;
+       font-size: 20px;
+       margin: 5px;
+       height: 30px;
+       border-radius: 10px;
+}
+.Down-Trend { 
+       background: red;
+       color: white; 
+       padding: 10px;
+       font-size: 20px;
+       margin: 5px;
+       height: 30px;
+       border-radius: 10px;
+}
+
+
+table {
+  width: 100%;
+}
+
+
+.navbar{
+       background-color: black;
+       padding: 0px;
+}
+
+.nav-heading{
+       display: inline-block;
+       color: #FC4445;
+       font-family: fantasy;
+       font-size: 70px;
+       margin: 5px;
+       margin-top: 5px;
+       margin-right: 150px;
+
+}
+
+.mainSelect{
+       display: inline-block;
+       margin: 5px;
+       vertical-align: center;
+}
+
+
+.select-form{
+       background: transparent;
+       justify-content: center;
+       display: flex;
+       margin: 5% 5%;
+}
+
+select {
+       width: 400px;
+       height: 40px;
+       font-size: 15px;
+       border-radius: 25px;
+       margin: 10px;
+       background-color: black;
+       border-color: #FC4445;
+       color: #FC4445;
+
+}
+
+.display-section{
+       padding: 0px;
+}
+
+.header-img-div{
+       padding-top: 5%;
+       max-width: 50%;
+       display: inline-block;
+       text-align: center;
+       float: left;
+}
+
+.header-img{
+       width: 60%;
+       margin: 0px;
+}
+
+.header-content-div{
+       margin-right: 5px;
+       max-width: 50%;
+       display: inline-block;
+       float: right;
+}
+
+.header-content{
+       text-align: justify;
+       font-family: monospace;
+       color: white;
+
+}
+
+option {
+       color: #FC4445;
+       font-family: monospace;
+       font-size: 30px;
+}
+
+select:focus {
+       font-size: 10px;
+       min-width: 400px;
+       width: auto;
+       background-color: black;
+}
+
+.scan-button{
+       font-size: 20px;
+       width: 100px;
+       height: 40px;
+       border-radius: 20px;
+       background-color: #FC4445;
+       color: black;
+       font-family: fantasy;
+}
+
+.header{
+       background: transparent;
+       height: 500px;
+       display: flex;
+       justify-content: center;
+}
+
+.background-img-header{
+       width: 1000px;
+}
+
